@@ -10,6 +10,15 @@ fn get_item(index: usize) {
     println!("The value at index {} is {:?}", index, value);
 }
 
+
+fn get_sum(elements : &Vec<i32>) -> i32 {
+    let mut sum = 0;
+    for element in elements {
+        sum += element;
+    }
+    sum
+}
+
 fn main() {
     let vec = vec![1, 2, 3, 4, 5];
     get_item(3);
@@ -27,4 +36,5 @@ fn main() {
     //     Some(first_value) => println!("The first value in the vector is: {}", first_value),
     //     None => println!("The vector is empty!"),
     // }
+    println!("The sum of vector elements {:?} is: {}", vec,get_sum(&vec));
 }

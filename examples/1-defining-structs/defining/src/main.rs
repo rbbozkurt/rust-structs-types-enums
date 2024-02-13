@@ -3,8 +3,8 @@
 struct Person {
     first_name: String,
     last_name: String,
-    email: String,
-    phone_number: String,
+    email: Option<String>,
+    phone_number: Option<String>,
     age: u8,
 }
 
@@ -19,8 +19,8 @@ fn main() {
             first_name: "John".to_string(),
             last_name: "Doe".to_string(),
             age: 25,
-            email: "john-doe@foo.com".to_string(),
-            phone_number: "123-456-7890".to_string(),
+            email: Some("john-doe@foo.com".to_string()),
+            phone_number: Some("123-456-7890".to_string()),
         }.full_name()
     );
 }

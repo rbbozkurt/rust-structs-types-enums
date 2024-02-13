@@ -1,3 +1,6 @@
+use std::string::String; // Add missing import statement
+
+#[derive(Debug)]
 struct User {
     username: String,
     email: String,
@@ -14,6 +17,14 @@ impl User {
             active: true,
         }
     }
+    fn from_email(email: String) -> User {
+        let email_parts: Vec<&str> = email.split("@").collect();
+        User::new(email_parts[0].to_string(), email.to_string(), String::from(""))
+    }
+
+    fn update_uri(&mut self, uri: String) {
+        self.uri = uri;
+    }
     fn deactivate(&mut self) {
         self.active = false;
     }
@@ -22,11 +33,16 @@ impl User {
 fn main() {
     let mut new_user = User::new(
         String::from("alfredodeza"),
-        String::from("alfreodeza@example.com"),
+        String::from("alfreodezaçexample.com"),
         String::from("https://alfredodeza.com"),
     );
-    println!("Hello, {}!", new_user.username);
-    println!("Account {} status is: {}", new_user.username, new_user.active);
-    new_user.deactivate();
-    println!("Account {} status is: {}", new_user.username, new_user.active);
+
+    let mut tmp_user = User::from_email(
+        String::from("tmp_user@gmail.com"),
+    );
+    println!("Hello, {:?}!", tmp_user);
+    tmp_user.update_uri(String::from("https://tmpuser.com"));
+    println!("Hello, {:?}!", tmp_user);
+   
+
 }

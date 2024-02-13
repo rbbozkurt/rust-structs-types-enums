@@ -1,6 +1,6 @@
 fn ownership() {
     let numbers = vec![1, 2, 3];
-    let slice = &numbers[..]; // creates a slice of all elements in numbers
+    let slice = & numbers[..]; // creates a slice of all elements in numbers
     println!("slice = {:?}", slice);
 }
 
@@ -15,8 +15,8 @@ fn modifiable() {
 
 fn main() {
     // slices and vectors are similar. But slices are immutable depending on how they are borrowed
-    //ownership();
-    modifiable();
+    ownership();
+    //modifiable();
 }
 
 // Use slices when: 

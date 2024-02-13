@@ -7,6 +7,7 @@ enum DiskSize {
     KB(u32),
     MB(u32),
     GB(u32),
+    TB(u32),
 }
 
 fn main() {

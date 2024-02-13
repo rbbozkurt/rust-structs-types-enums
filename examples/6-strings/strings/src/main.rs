@@ -1,8 +1,7 @@
 fn print_str(s: &str) {
     let new_string = format!("{}! other stuff here", s);
-    println!("{}", new_string);
+    print_string(new_string);
 }
-
 fn print_string(mut s: String) {
     println!("{}", s);
 }

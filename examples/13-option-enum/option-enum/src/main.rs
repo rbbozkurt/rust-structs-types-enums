@@ -8,7 +8,7 @@ fn divide(x: i32, y: i32) -> Option<i32> {
 
 fn main() {
     let a = 10;
-    let b = 2;
+    let b = 0;
 
     let result = divide(a, b);
 
